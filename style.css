@@ -1,0 +1,106 @@
+/* O Bootstrap define a fonte para Sans-serif */
+
+body {
+    /* Define o fundo como a cor roxa escura definida no index.html */
+    background-color: var(--bs-dark-bg) !important;
+}
+
+/* Cor de fundo customizada para o card de informação */
+.bg-info-custom {
+    background-color: var(--card-info-bg);
+    border-radius: 15px; /* Bordas arredondadas */
+    border: 2px solid var(--bs-primary);
+}
+
+/* --- EFEITO NEUMORFISMO NO CARD PRINCIPAL --- */
+.card-neumorphism {
+    border: none !important;
+    border-radius: 25px;
+    /* Sombra externa */
+    box-shadow: 
+        10px 10px 20px #0b0512, /* Sombra escura (baixa) */
+        -10px -10px 20px #241148, /* Sombra clara (alta) */
+        0 0 40px rgba(111, 66, 193, 0.4); /* Brilho do Roxo Primário */
+}
+
+/* Transição para a cor de fundo do card do robô */
+#robot-card-body {
+    transition: background-color 0.5s ease-in-out;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave na imagem */
+}
+
+/* Centralização e ajuste de tamanho do Container do Robô */
+.robot-container {
+    max-width: 250px; 
+    margin: 0 auto;
+    padding: 0;
+}
+
+.robot {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease; 
+}
+
+
+
+/* --- Controles e Seletores de Cor --- */
+.color-options-container {
+    max-height: 400px;
+    overflow-y: auto; /* Scroll para caber todas as cores */
+    padding-right: 15px; /* Espaço para a barra de rolagem */
+}
+
+/* Estilo para a barra de rolagem (Chrome, Safari) */
+.color-options-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--card-main-bg);
+}
+
+.color-options-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--bs-warning);
+}
+
+.color-options {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 8px; /* Menor gap para otimizar espaço */
+    padding: 5px 0;
+    margin-bottom: 10px !important;
+}
+
+.color-swatch {
+    width: 32px; /* Menor e mais compacto */
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fff; 
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); 
+}
+
+.color-swatch:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--bs-warning); 
+}
+
+.color-swatch.active {
+    border-color: var(--bs-warning); 
+    border-width: 4px; 
+    transform: scale(1.35); 
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.9); 
+}
+
+/* --- Feedback dos Botões (Atualizado para o novo botão Reset) --- */
+.btn-warning.saved-feedback, .btn-outline-light.saved-feedback {
+    animation: pulse-warn 0.6s ease-in-out;
+}
+
+@keyframes pulse-warn {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.04); opacity: 0.95; }
+    100% { transform: scale(1); opacity: 1; }
+}
